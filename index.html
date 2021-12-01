@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avrl- kamal</title>
+
+    <style>
+      .container {
+        margin: 4rem auto 1rem;
+        width: 220px;
+        height: 220px;
+        position: relative;
+      }
+      .btn-container {
+        margin: 2rem auto;
+        width: 250px;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+      }
+      button {
+        font-size: 0.9rem;
+        color: white;
+        background-color: #257e82;
+        padding: 0.3rem 1.1rem;
+      }
+      .c1 {
+        z-index: 10;
+        position: absolute;
+        border-radius: 50px;
+        background-color: orangered;
+        height: 70px;
+        width: 70px;
+        top: 0;
+        left: 0;
+        animation-name: anim1;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-play-state: paused;
+      }
+      .c2 {
+        z-index: 5;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 50px;
+        background-color: yellow;
+        height: 70px;
+        width: 70px;
+        animation-name: anim2;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-play-state: paused;
+      }
+      .c3 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 50px;
+        background-color: green;
+        height: 70px;
+        width: 70px;
+        animation-name: anim3;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-play-state: paused;
+      }
+      .c4 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-radius: 50px;
+        background-color: skyblue;
+        height: 70px;
+        width: 70px;
+        animation-name: anim4;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-play-state: paused;
+      }
+      @keyframes anim1 {
+        0% {
+          width: 70px;
+          background-color: orangered;
+        }
+        12.5% {
+          width: 100%;
+          background-color: yellow;
+        }
+        25% {
+          width: 70px;
+          background-color: yellow;
+        }
+        37% {
+          width: 100%;
+          background-color: skyblue;
+        }
+        50% {
+          width: 70px;
+          background-color: skyblue;
+        }
+
+        62% {
+          width: 100%;
+          background-color: green;
+        }
+        75% {
+          width: 70px;
+          background-color: green;
+        }
+        87.5% {
+          width: 100%;
+          background-color: orangered;
+        }
+        100% {
+          width: 70px;
+          background-color: orangered;
+        }
+      }
+      @keyframes anim2 {
+        0% {
+          height: 70px;
+          background-color: yellow;
+        }
+        12.5% {
+          height: 100%;
+          background-color: skyblue;
+        }
+        25% {
+          height: 70px;
+          background-color: skyblue;
+        }
+        37% {
+          height: 100%;
+          background-color: green;
+        }
+        50% {
+          height: 70px;
+          background-color: green;
+        }
+        62% {
+          height: 100%;
+          background-color: orangered;
+        }
+        75% {
+          height: 70px;
+          background-color: orangered;
+        }
+        87.5% {
+          height: 100%;
+          background-color: yellow;
+        }
+        100% {
+          height: 70px;
+          background-color: yellow;
+        }
+      }
+      @keyframes anim3 {
+        0% {
+          height: 70px;
+          background-color: green;
+        }
+        12.5% {
+          height: 100%;
+          background-color: orangered;
+        }
+        25% {
+          height: 70px;
+          background-color: orangered;
+        }
+        37% {
+          height: 100%;
+          background-color: yellow;
+        }
+        50% {
+          height: 70px;
+          background-color: yellow;
+        }
+        62% {
+          height: 100%;
+          background-color: skyblue;
+        }
+        75% {
+          height: 70px;
+          background-color: skyblue;
+        }
+        87.5% {
+          height: 100%;
+          background-color: green;
+        }
+        100% {
+          height: 70px;
+          background-color: green;
+        }
+      }
+      @keyframes anim4 {
+        0% {
+          width: 70px;
+          background-color: skyblue;
+        }
+        12.5% {
+          width: 100%;
+          background-color: green;
+        }
+        25% {
+          width: 70px;
+          background-color: green;
+        }
+        37% {
+          width: 100%;
+          background-color: orangered;
+        }
+        50% {
+          width: 70px;
+          background-color: orangered;
+        }
+
+        62% {
+          width: 100%;
+          background-color: yellow;
+        }
+        75% {
+          width: 70px;
+          background-color: yellow;
+        }
+        87.5% {
+          width: 100%;
+          background-color: skyblue;
+        }
+        100% {
+          width: 70px;
+          background-color: skyblue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <span class="c1"></span>
+        <span class="c2"></span>
+        <span class="c3"></span>
+        <span class="c4"></span>
+      </div>
+      <div class="btn-container">
+        <button id="btn-start" onclick="startfunc()">start</button>
+        <button id="btn-stop" onclick="stopfunc()">stop</button>
+      </div>
+    </main>
+  </body>
+
+  <script>
+    let circles = document.getElementsByTagName("span");
+
+    function startfunc() {
+      for (i = 0; i < circles.length; i++) {
+        circles[i].style.animationPlayState = "running";
+      }
+    }
+    function stopfunc() {
+      for (i = 0; i < circles.length; i++) {
+        circles[i].style.animationPlayState = "paused";
+      }
+    }
+  </script>
+</html>
